@@ -1,0 +1,68 @@
+
+# In order to to create pages it is necessary to define routes for them.
+# A route maps a URL path to a controller. It defines what function
+# or method will be called when a URL is accessed.
+# If the user accesses http://drupal8.dev//mycustom/mycontrol/test, the routing
+# system will look for a route with that path. In this case it will find a
+# match, and execute the _controller callback. In this case the callback is
+# defined as a classname
+# ("\Drupal\mycustom\Controller\DefaultController")
+# and a method ("mycontrol").
+mycustom.default_controller_mycontrol:
+  path: '/mycustom/mycontrol/test'
+  defaults:
+    _controller: '\Drupal\mycustom\Controller\DefaultController::mycontrol'
+    _title: 'My Controller'
+  requirements:
+    _permission: 'access training content'
+    #_query_check_siteid: 'TRUE'
+    _custom_access: '\Drupal\mycustom\Controller\DefaultController::customAccess'
+# In order to to create pages it is necessary to define routes for them.
+# A route maps a URL path to a controller. It defines what function
+# or method will be called when a URL is accessed.
+# If the user accesses http://drupal8.dev//mycustom/mycontrol2/test2, the routing
+# system will look for a route with that path. In this case it will find a
+# match, and execute the _controller callback. In this case the callback is
+# defined as a classname
+# ("\Drupal\mycustom\Controller\DefaultController")
+# and a method ("mycontrol2").
+mycustom.default_controller_mycontrol2:
+  path: '/mycustom/mycontrol2/test2'
+  defaults:
+    _form: 'Drupal\mycustom\Form\SimpleForm'
+    _title: 'My Test Form'
+  requirements:
+    _permission: 'access content'
+# In order to to create pages it is necessary to define routes for them.
+# A route maps a URL path to a controller. It defines what function
+# or method will be called when a URL is accessed.
+# If the user accesses http://drupal8.dev//mycustom/hello/{name}, the routing
+# system will look for a route with that path. In this case it will find a
+# match, and execute the _controller callback. In this case the callback is
+# defined as a classname
+# ("\Drupal\mycustom\Controller\DefaultController")
+# and a method ("hello").
+mycustom.default_controller_hello:
+  path: '/mycustom/hello/{name}'
+  defaults:
+    _controller: '\Drupal\mycustom\Controller\DefaultController::hello'
+    _title: 'My Test 2'
+  requirements:
+    _permission: 'access content'
+mycustom.default_controller_hello2:
+  path: '/mycustom/hello2/{node}'
+  defaults:
+    _controller: '\Drupal\mycustom\Controller\DefaultController::hello2'
+    _title: 'My Test 4'
+  requirements:
+    _permission: 'access content'
+mycustom.admin_custom_form:
+  path: '/admin/config/mycustom/adminformbase'
+  defaults:
+    _form: '\Drupal\mycustom\Form\AdminFormBase'
+    _title: 'AdminFormBase'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

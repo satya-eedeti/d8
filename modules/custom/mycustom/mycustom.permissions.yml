@@ -1,0 +1,6 @@
+access training content:
+  title: Access Training content
+  description: This is for accessing training content
+
+permission_callbacks:
+  - \Drupal\mycustom\NodeListingPermissions::getNodeListingPermissions

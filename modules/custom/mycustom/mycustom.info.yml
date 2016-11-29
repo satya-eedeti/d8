@@ -1,0 +1,5 @@
+name: mycustom
+type: module
+description: My custom module for training
+core: 8.x
+package: custom

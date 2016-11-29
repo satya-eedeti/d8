@@ -1,0 +1,7 @@
+mycustom.admin_custom_form:
+  title: 'Admin AppId'
+  route_name: mycustom.admin_custom_form
+  description: 'A description for the menu entry'
+  parent: system.admin_config_system
+  weight: 99
+

@@ -1,0 +1,5 @@
+name: dbopr
+type: module
+description: My custom DB operations
+core: 8.x
+package: custom

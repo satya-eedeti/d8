@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains dbopr.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function dbopr_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the dbopr module.
+    case 'help.page.dbopr':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My custom DB operations') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,4 @@
+training.main_menu:
+  title: Satya
+  description: 'Create tasks that the system can execute.'
+  route_name: system.admin_config_development

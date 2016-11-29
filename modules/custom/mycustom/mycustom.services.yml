@@ -1,0 +1,8 @@
+services:
+  training.query_siteid_check:
+    class: Drupal\mycustom\QueryChecker
+    tags:
+      - { name: access_check, applies_to: _query_check_siteid }
+  mycustom.form_manager:
+    class: Drupal\mycustom\FormManager
+    arguments: ['@database']

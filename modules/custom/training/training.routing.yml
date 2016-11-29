@@ -1,0 +1,6 @@
+training.node_listing_controller_content:
+  path: '/list/node'
+  defaults:
+    _controller: '\Drupal\training\Controller\NodeListingController::content'
+  requirements:
+    _permission: 'access content'
