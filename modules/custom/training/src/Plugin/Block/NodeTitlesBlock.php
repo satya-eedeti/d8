@@ -75,8 +75,9 @@ class NodeTitlesBlock extends BlockBase implements ContainerFactoryPluginInterfa
       //$nids[] = 'node:' . $title->nid; // if we add node_list arg as below, then no need for individual nodes, it will tc.
     }
     $nids[] = 'node_list';
+    $account = \Drupal::currentUser();
     $build = [];
-    $build['node_titles_block']['#markup'] = $titletext;
+    $build['node_titles_block']['#markup'] = $titletext . "<br>Published by: <strong>" . $account->getEmail() . "</strong>";
     $build['node_titles_block']['#cache']['tags'] = $nids;
 
     return $build;
