@@ -6,3 +6,6 @@ services:
   mycustom.form_manager:
     class: Drupal\mycustom\FormManager
     arguments: ['@database']
+  mycustom.testservice:
+    class: Drupal\mycustom\MyService
+    arguments: []

@@ -7,10 +7,14 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\mycustom\FormManager;
 
+use Drupal\weather\WeatherService;
+
 class SimpleForm extends FormBase {
 	private $formManager;
-	public function __construct(FormManager $formManager) {
+	private $weatherService;
+	public function __construct(FormManager $formManager, WeatherService $weatherService) {
 		$this->formManager = $formManager;
+		$this->weatherService = $weatherService;
 	}
 
 	public function getFormId() {
@@ -18,6 +22,7 @@ class SimpleForm extends FormBase {
 	}
 	public function buildForm(array $form, FormStateInterface $form_state) {
 		//$form = array();
+		$this->weatherService->getWeatherInfo();
 		$form['firstname'] = array(
 			'#type' => 'textfield',
 			'#title' => 'Firstname',
@@ -47,7 +52,8 @@ class SimpleForm extends FormBase {
 	}
 	public static function create(ContainerInterface $container) {
 		return new static(
-			$container->get('mycustom.form_manager')
+			$container->get('mycustom.form_manager'),
+			$container->get('weather.info')
 		);
 	}
 

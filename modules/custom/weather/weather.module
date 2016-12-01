@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains weather.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function weather_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the weather module.
+    case 'help.page.weather':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Weather module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function weather_theme($existing, $type, $theme, $path) {
+  return array(
+    'weather_display' => array(
+      'variables' => array('city' => $city, 'weather_info' => $weather_info),
+    ),
+  );
+}
