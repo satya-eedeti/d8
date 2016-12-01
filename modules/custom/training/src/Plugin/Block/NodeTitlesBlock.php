@@ -79,6 +79,7 @@ class NodeTitlesBlock extends BlockBase implements ContainerFactoryPluginInterfa
     $build = [];
     $build['node_titles_block']['#markup'] = $titletext . "<br>Published by: <strong>" . $account->getEmail() . "</strong>";
     $build['node_titles_block']['#cache']['tags'] = $nids;
+    $build['node_titles_block']['#cache']['contexts'] = ['user'];
 
     return $build;
   }
