@@ -1,0 +1,14 @@
+name: mytheme
+type: theme
+description: My Awesome theme
+package: Other
+core: 8.x
+libraries:
+  - mytheme/global-styling
+
+base theme: bartik
+
+regions:
+  header: header
+  content: content
+  footer: footer

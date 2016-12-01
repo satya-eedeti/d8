@@ -1,0 +1,7 @@
+services:
+  myevents.events:
+    class: Drupal\myevents\EventsSubscriber\MyeventsService
+    arguments: []
+    tags:
+      - {name: event_subscriber}
+

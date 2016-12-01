@@ -1,4 +1,9 @@
-#block-weatherblock {
+#block-weatherblock, #block-myeventsisbi {
     background-color: grey;
     color: white;
+    font-family: verdana;
+}
+#block-weatherblock h2, #block-myeventsisbi h2{
+    color: red;
+    text-shadow: 0 1px 0 red;
 }
